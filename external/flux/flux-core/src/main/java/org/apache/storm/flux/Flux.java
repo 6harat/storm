@@ -237,6 +237,11 @@ public class Flux {
             for (StreamDef sd : t.getStreams()) {
                 printf("%s --%s--> %s", sd.getFrom(), sd.getGrouping().getType(), sd.getTo());
             }
+
+            print("--------------- WORKER HOOKS ---------------");
+            for (WorkerHookDef whd : t.getWorkerHooks()) {
+                printf("%s (%s)", whd.getId(), whd.getClassName());
+            }
             print("--------------------------------------");
         }
     }
